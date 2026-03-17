@@ -1,0 +1,347 @@
+/* GRID */
+#video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 434px);
+  gap: 20px;
+  justify-content: center;
+  margin-left: 0;         
+  margin-top: 114px;
+  margin-bottom: 110px;    
+  z-index: 2;
+}
+body {
+  min-height: 100vh;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* CARD*/
+.externalplayera {
+  position: relative;
+  height: 354px;
+  width: 434px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* LIQUID GLASS EFFECT */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.externalplayera:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* THUMBNAIL */
+.playera {
+  width: 100%;
+  height: 244px;
+  position: relative;
+}
+
+.duration-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.playera img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+/* DESCRIPTION */
+.player-description-bara {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  padding: 10px 10px 0 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* CHANNEL PROFILE */
+.channel-profilea {
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+}
+
+.channel-profilea img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* TEXT */
+.descriptiona {
+  padding-left: 6px;
+}
+
+.topica {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: white;
+}
+
+.channel-name-viewsa {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgba(200, 200, 200, 0.7);
+}
+
+.viewsa {
+  margin-top: 3px;
+  color: rgba(180, 180, 180, 0.6);
+}
+
+/*BOTTOM BAR*/
+
+.side_bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  z-index: 10;
+  /* Glass effect */
+  background: rgba(36, 35, 35, 0.35);
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.side:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.side img {
+  height: 24px;
+  margin-top: 0;
+}
+
+.side div {
+  font-family: Roboto, Arial;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 3px;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+/*TOP BAR*/
+
+.top_bar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  z-index: 2;
+  /* Glass effect */
+  background: rgba(36, 35, 35, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.top_bar_1 { flex-shrink: 0; }
+.top_bar_1 img {
+  width: 93px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  height: 100%;
+}
+
+.top_bar_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  overflow: hidden;
+  flex: 1;
+  max-width: 500px;
+  min-width: 80px;
+  height: 38px;
+}
+
+.searchbar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  padding: 0 16px;
+  height: 100%;
+}
+
+.searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.searchbar img {
+  height: 38px;
+  width: 38px;
+  padding: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.mic {
+  height: 38px;
+  width: 38px;
+  padding: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+.mic img {
+  height: 100%;
+  width: 100%;
+}
+
+.top_bar_3 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 15px;
+}
+
+.create {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 25px;
+}
+
+.create img {
+  height: 18px;
+  width: 18px;
+}
+
+.create span {
+  color: white;
+  font-size: 14px;
+  font-family: Roboto, Arial;
+}
+
+.create:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav_right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-right: 35px;
+}
+
+.bell, .nav_profile {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.bell:hover, .nav_profile:hover {
+  opacity: 0.7;
+}
+
+/*  RESPONSIVE: shrink top bar*/
+
+@media (max-width: 768px) {
+  .create span {
+    display: none;
+  }
+  .create {
+    padding: 6px 8px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .create ,.nav_right{
+    display: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .nav_right {
+    display: none; 
+  }
+}
