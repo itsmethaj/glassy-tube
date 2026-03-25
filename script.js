@@ -1,5 +1,5 @@
 console.log("JS loaded");
-const API_KEY = "AIzaSyCedKlYyMVLFJCZE2WaStodjK8e7HKA1mI";
+const API_KEY = "AIzaSyDfRdI6TWmMG00zZjlW-7TrSRWtNMqmdR4";
 
 // FORMAT VIEWS → 7700000 becomes "7.7M views"
 function formatViews(count) {
