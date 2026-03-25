@@ -1,6 +1,5 @@
 console.log("JS loaded");
 const API_KEY = "AIzaSyCedKlYyMVLFJCZE2WaStodjK8e7HKA1mI";
-const query = "tech reviews";
 
 // FORMAT VIEWS → 7700000 becomes "7.7M views"
 function formatViews(count) {
@@ -9,15 +8,14 @@ function formatViews(count) {
   return count + " views";
 }
 
-async function loadVideos() {
+async function loadVideos(query = "tech reviews") {
   try {
 
     // 1. FETCH VIDEOS
     const res  = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&maxResults=50&type=video&key=${API_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&maxResults=50&type=video&key=${API_KEY}`
     );
     const data = await res.json();
-
 
     // 2. LOOP THROUGH EACH VIDEO
     data.items.forEach(async (video) => {
@@ -46,7 +44,7 @@ async function loadVideos() {
       const views     = formatViews(videoData.items[0].statistics.viewCount);
 
       // BUILD CARD
-        const card = `
+      const card = `
   <a href="${link}" target="_blank" style="text-decoration:none; color:black;">
     <div class="externalplayera">
       <div class="externalplayer-aa">
@@ -83,5 +81,25 @@ async function loadVideos() {
   }
 }
 
-loadVideos();
+// SEARCH FUNCTIONALITY
+const searchInput = document.querySelector(".searchbar input");
+const searchIcon  = document.querySelector(".searchbar img");
 
+function searchVideos(q) {
+  if (!q) return;
+  document.getElementById("video-grid").innerHTML = ""; // clear old results
+  loadVideos(q);
+}
+
+// Enter key
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") searchVideos(searchInput.value.trim());
+});
+
+// Search icon click
+searchIcon.addEventListener("click", () => {
+  searchVideos(searchInput.value.trim());
+});
+
+// INITIAL LOAD
+loadVideos();
