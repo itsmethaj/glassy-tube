@@ -101,3 +101,7 @@ searchIcon.addEventListener("click", () => {
 
 // INITIAL LOAD
 loadVideos();
+
+
+
+// restricted api on 27 march 2026
