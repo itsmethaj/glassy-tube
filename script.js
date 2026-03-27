@@ -1,7 +1,5 @@
-console.log("JS loaded");
 const API_KEY = "AIzaSyDfRdI6TWmMG00zZjlW-7TrSRWtNMqmdR4";
 
-// FORMAT VIEWS → 7700000 becomes "7.7M views"
 function formatViews(count) {
   if (count >= 1000000) return (count / 1000000).toFixed(1) + "M views";
   if (count >= 1000)    return (count / 1000).toFixed(1) + "K views";
