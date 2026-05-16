@@ -61,7 +61,7 @@ if(!data.items){
   console.log(data);
 
   const errorReason=
-    data?.error?.errors?.[0]?.reason;
+  data?.error?.errors?.[0]?.reason;
 
   if(errorReason==="quotaExceeded"){
 
@@ -93,48 +93,34 @@ if(!data.items){
     `;
 
   }else if(
-  errorReason==="ipRefererBlocked"||
-  errorReason==="forbidden"
-){
+    errorReason==="ipRefererBlocked"||
+    errorReason==="forbidden"
+  ){
 
-  grid.innerHTML=`
-  <div style="
-    color:white;
-    padding:25px;
-    text-align:center;
-    line-height:1.7;
-  ">
-    <h2 style="
-      color:#ff4d4d;
-      margin-bottom:10px;
+    grid.innerHTML=`
+    <div style="
+      color:white;
+      padding:25px;
+      text-align:center;
+      line-height:1.7;
     ">
-      API Restriction Error
-    </h2>
+      <h2 style="
+        color:#ff4d4d;
+        margin-bottom:10px;
+      ">
+        API Restriction Error
+      </h2>
 
-    <p>
-      This domain is not allowed
-      to use the API key.
-    </p>
-  </div>
-  `;
+      <p>
+        This domain is not allowed
+        to use the API key.
+      </p>
+    </div>
+    `;
 
-}else{
+  }
 
-  console.error(
-    "YouTube API Error:",
-    data
-  );
-
-  grid.innerHTML=`
-  <p style="
-    color:red;
-    padding:20px;
-  ">
-    Failed to load videos
-  </p>
-  `;
-}
-return
+  return;
 }
     grid.innerHTML="";
 
