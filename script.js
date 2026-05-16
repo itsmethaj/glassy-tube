@@ -91,16 +91,47 @@ if(!data.items){
     </div>
     `;
 
-  }else{
+  }else if(
+  errorReason==="ipRefererBlocked"||
+  errorReason==="forbidden"
+){
 
-    console.error(
-      "YouTube API Error:",
-      data
-    );
+  grid.innerHTML=`
+  <div style="
+    color:white;
+    padding:25px;
+    text-align:center;
+    line-height:1.7;
+  ">
+    <h2 style="
+      color:#ff4d4d;
+      margin-bottom:10px;
+    ">
+      API Restriction Error
+    </h2>
 
-  }
+    <p>
+      This domain is not allowed
+      to use the API key.
+    </p>
+  </div>
+  `;
 
-  return;
+}else{
+
+  console.error(
+    "YouTube API Error:",
+    data
+  );
+
+  grid.innerHTML=`
+  <p style="
+    color:red;
+    padding:20px;
+  ">
+    Failed to load videos
+  </p>
+  `;
 }
 
     grid.innerHTML="";
