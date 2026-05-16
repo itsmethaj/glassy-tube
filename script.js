@@ -53,13 +53,55 @@ async function loadVideos(query="tech reviews",isShorts=false){
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&maxResults=50&type=video&key=${API_KEY}`
     );
 
-    const data=await res.json();
+   const data=await res.json();
 
-    if(!data.items){
-      console.log(data);
-      grid.innerHTML="<p style='color:red;padding:20px'>API Error</p>";
-      return;
-    }
+if(!data.items){
+
+  console.log(data);
+
+  const errorReason=
+    data?.error?.errors?.[0]?.reason;
+
+  if(errorReason==="quotaExceeded"){
+
+    grid.innerHTML=`
+    <div style="
+      color:white;
+      padding:25px;
+      text-align:center;
+      line-height:1.7;
+    ">
+      <h2 style="
+        color:#ff4d4d;
+        margin-bottom:10px;
+      ">
+        API Credits Expired
+      </h2>
+
+      <p>
+        YouTube API daily limit exceeded.
+      </p>
+
+      <p style="
+        opacity:.7;
+        font-size:.9rem;
+      ">
+        Credits usually reset within 24 hours.
+      </p>
+    </div>
+    `;
+
+  }else{
+
+    console.error(
+      "YouTube API Error:",
+      data
+    );
+
+  }
+
+  return;
+}
 
     grid.innerHTML="";
 
