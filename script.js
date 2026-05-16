@@ -406,3 +406,75 @@ document
 );
 
 loadVideos();
+window.addEventListener("load",()=>{
+
+const light=document.body.classList.contains("light-theme");
+
+const popup=document.createElement("div");
+
+popup.innerHTML=`
+<div style="
+position:fixed;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:999999;
+backdrop-filter:blur(18px);
+background:${light?"rgba(255,255,255,.25)":"rgba(0,0,0,.45)"};
+">
+
+<div style="
+width:min(500px,100%);
+padding:34px 28px;
+border-radius:32px;
+text-align:center;
+backdrop-filter:blur(30px);
+background:${light?"rgba(255,255,255,.55)":"rgba(20,20,20,.55)"};
+border:1px solid ${light?"rgba(255,255,255,.7)":"rgba(255,255,255,.12)"};
+color:${light?"#111":"#fff"};
+">
+
+<div style="font-size:2.2rem">⚠️</div>
+
+<h2 style="
+color:#ff003c;
+margin:14px 0;
+font-size:1.6rem;
+">
+Educational Project
+</h2>
+
+<p style="
+line-height:1.8;
+opacity:.82;
+">
+GlassyTube is a frontend clone made <br>only for educational purposes.
+<br><br>
+This is NOT an official YouTube platform.
+</p>
+
+<button id="closePopup" style="
+margin-top:24px;
+border:none;
+padding:14px 28px;
+border-radius:999px;
+background:#ff003c;
+color:white;
+font-weight:700;
+cursor:pointer;
+">
+I Understand
+</button>
+
+</div>
+</div>
+`;
+
+document.body.appendChild(popup);
+
+document.getElementById("closePopup")
+.onclick=()=>popup.remove();
+
+});
