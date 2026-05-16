@@ -1,3 +1,4 @@
+const API_KEY = "AIzaSyBkX95uomSG4cDG3oxy66YiHKN8X5d2BP0";
 const grid=document.getElementById("video-grid");
 const searchInput=document.querySelector(".search_input_box input");
 const navItems=document.querySelectorAll(".nav_item");
