@@ -133,7 +133,8 @@ if(!data.items){
   </p>
   `;
 }
-
+return
+}
     grid.innerHTML="";
 
     for(const video of data.items){
