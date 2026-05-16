@@ -179,16 +179,18 @@ color:#ff4d4d;
 }
 .bottom_nav{
 position:fixed;
-bottom:0;
-left:0;
-width:100%;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
 height:90px;
 display:flex;
 align-items:center;
 justify-content:space-around;
 padding:0 6px;
 background:var(--card-bg);
-border-top:1px solid var(--border);
+border:1px solid var(--border);
+border-radius:32px;
 backdrop-filter:blur(18px);
 z-index:5000;
 }
