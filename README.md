@@ -1,18 +1,50 @@
-# Glassy Tube
+# GlassyTube
 
-A YouTube-inspired video browser built with zero frameworks . Just raw HTML, CSS & JS doing all the work.
+GlassyTube is a modern mobile-first YouTube-inspired web app built using HTML, CSS, and JavaScript with YouTube Data API v3.
 
-## Features
+Designed with a clean glassmorphism UI and smooth mobile experience, this project focuses on frontend design, API integration, and responsive layouts.
 
-- Dark liquid glass aesthetic
-- Live video cards via YouTube Data API v3
-- Frosted-glass top navbar
-- Floating bottom nav for mobile
-- Smooth hover effects
+---
 
-## Built With
+# Features
+
+- YouTube video search
+- Shorts-style vertical feed
+- Voice search using Web Speech API
+- Light/Dark theme support
+- Mobile-first responsive UI
+- Dynamic video rendering
+- Auto-playing Shorts
+- Smooth glassmorphism design
+- Bottom navigation system
+- Animated search overlay
+- Real-time view formatting
+- Channel profile thumbnails
+
+---
+
+# Technologies Used
 
 - HTML5
 - CSS3
-- Vanilla JavaScript
+- JavaScript
 - YouTube Data API v3
+- Web Speech API
+
+---
+
+# Home Feed
+
+- Responsive video grid
+- Dynamic thumbnails
+- Channel information
+- Views and upload date
+- Smooth card layout
+
+---
+
+# Shorts Feed
+
+- Vertical swipe scrolling
+- Fullscreen  layout
+- Auto-playing Shorts

@@ -1,63 +1,82 @@
 <!doctype html>
 <html>
+
+<!doctype html>
+<html>
   <head>
     <meta charset="UTF-8" />
+    <meta
+name="viewport"
+content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>YTB</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
+  </head> 
 
   <body>
-    <div class="side_bar">
-      <div class="side">
-        <img src="icons/menu.svg" class="menu" />
-        <span class="tooltip">Menu</span>
-      </div>
-      <div class="side">
-        <img src="icons/home.svg" />
-        <span class="tooltip">Home</span>
-      </div>
-      <div class="side">
-        <img src="icons/shorts.svg" />
-        <span class="tooltip">Shorts</span>
-      </div>
-      <div class="side">
-        <img src="icons/subscrriptions.svg" />
-        <span class="tooltip">Subscriptions</span>
-      </div>
-      <div class="side">
-        <img src="icons/you.svg" />
-        <span class="tooltip">You</span>
-      </div>
-    </div>
-    <div class="top_bar">
-      <div class="top_bar_1">
-        <img src="icons/YouTube_Logo_2017.svg" />
-      </div>
-      <div class="top_bar_2">
-        <div class="searchbar">
-          <input type="search" placeholder="Search" />
-          <img src="icons/search.svg" />
-        </div>
-        <div class="mic">
-          <img src="icons/mic.svg" />
-        </div>
-      </div>
-      <div class="top_bar_3">
-  <div class="create">
-    <img src="icons/add.svg" />
-    <span>Create</span>
+   <div class="top_bar">
+  <div class="top_bar_1">
+    <img src="icons/YouTube_Logo_2017.svg" />
   </div>
-  <div class="nav_right">
-    <div class="nav_icon">
-      <img src="icons/bell.svg" class="bell" />
+    <!-- SEARCH BAR -->
+<div class="search_container" id="searchContainer">
+  <div class="search_top">
+
+    <div class="back_btn" id="closeSearch">
+      <img src="icons/back.svg">
     </div>
-    <div class="nav_icon">
-      <img src="icons/you.svg" class="nav_profile" />
-    </div>
-  </div>
+
+    <div class="search_input_box">
+      <input type="search" placeholder="Search YouTube">
+      <div class="voice_status" id="voiceStatus">
+  Listening...
 </div>
     </div>
+
+    <div class="search_mic">
+      <img src="icons/mic.svg">
+    </div>
+
+  </div>
+
+</div>
+  <div class="top_bar_3">
+    <div class="notification">
+      <img src="icons/bell.svg" class="bell" />
+    </div>
+    <div class="mobile_search_btn"id="openSearch">
+      <img src="icons/search.svg" />
+    </div>
+  </div>
+
+</div>
+<div class="bottom_nav">
+
+  <div class="nav_item active_nav" id="homeBtn">
+    <img src="icons/home.svg">
+    <span>Home</span>
+  </div>
+
+  <div class="nav_item" id="shortsBtn">
+    <img src="icons/shorts.svg">
+    <span>Shorts</span>
+  </div>
+
+  <div class="nav_item create_btn" id="createBtn">
+    <img src="icons/add.svg">
+  </div>
+
+  <div class="nav_item" id="subsBtn">
+    <img src="icons/subscrriptions.svg">
+    <span>Subscriptions</span>
+  </div>
+
+  <div class="nav_item" id="youBtn">
+    <img src="icons/you.svg">
+    <span>You</span>
+  </div>
+
+</div>
     <div id="video-grid"></div>
-    <script src="script.js  z"></script>
+    <script src="script.js"></script>
   </body>
 </html>
